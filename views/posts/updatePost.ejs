@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Update</title>
+      <script src="https://kit.fontawesome.com/42a182743f.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="/css/register.css" />
+      <!-- Google font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto:wght@400;500&display=swap"
+         rel="stylesheet"
+      />
+   </head>
+   <body>
+      <%- include('../partials/nav.ejs') %>
+
+      <div class="register-container">
+         <div class="register-form-container">
+            <div class="register-form-title">
+               <h1>Update User <i class="fa-solid fa-user-plus"></i></h1>
+            </div>
+
+            <% if (error) { %>
+            <small class="error">
+               <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+               <%= error %>
+            </small>
+            <% } %>
+
+            <form
+               action="/api/v1/posts/<%= post?._id %>?_method=PUT"
+               method="post"
+               enctype="multipart/form-data"
+            >
+               <label for="title">title </label>
+               <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  autocomplete="off"
+                  value="<%= post.title%>"
+               />
+
+               <div class="inputWrapper">
+                  <label for="category">Category </label>
+                  <select name="category" id="category">
+                     <option value="">select category</option>
+                     <option value="react js">ReactJS</option>
+                     <option value="html">HTML</option>
+                     <option value="css">CSS</option>
+                     <option value="node js">NodeJS</option>
+                     <option value="javascript">JavaScript</option>
+                     <option value="other">Others</option>
+                  </select>
+               </div>
+
+               <label for="description">description </label>
+               <textarea
+                  type="description"
+                  name="description"
+                  id="description"
+                  autocomplete="off"
+                  rows="7"
+                  cols="4"
+                  style="
+                     padding-inline-start: 10px;
+                     text-align: left;
+                     resize: none;
+                     word-spacing: 2px;
+                     line-height: 1.5rem;
+                  "
+               >
+            <%= post.description%>
+            </textarea
+               >
+
+               <div class="inputWrapper">
+                  <label for="image">Post Image</label>
+                  <input type="file" name="update" id="image" style="border: none" />
+                  <!-- err -->
+               </div>
+
+               <button type="submit">Update Post</button>
+            </form>
+         </div>
+      </div>
+
+      <!-- $footer -->
+      <%- include('../partials/footer.ejs') %>
+   </body>
+</html>

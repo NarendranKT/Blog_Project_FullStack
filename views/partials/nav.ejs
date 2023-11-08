@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/css/navbar.css" />
+
+<nav class="nav">
+   <p><span class="logo">&#128508;</span></p>
+   <ul class="nav-ul">
+      <li class="nav-items"><a href="/">Home</a></li>
+      <li class="nav-items"><a href="/api/v1/posts/">Posts</a></li>
+      <% if (loginUser) { %>
+      <li class="nav-items"><a href="/api/v1/users/profile-page">Profile</a></li>
+
+      <li class="postBtn"><a href="/api/v1/posts/get-post-form">New Post</a></li>
+
+      <li class="postBtn"><a href="/api/v1/users/logout">Logout</a></li>
+      <% }else { %>
+      <li class="nav-items"><a href="/api/v1/users/login">Login</a></li>
+      <li class="nav-items"><a href="/api/v1/users/register">Register</a></li>
+      <%}%>
+   </ul>
+</nav>

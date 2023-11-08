@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Upload Profile Picture</title>
+      <link rel="stylesheet" href="/css/uploadDP.css" />
+      <script src="https://kit.fontawesome.com/42a182743f.js" crossorigin="anonymous"></script>
+
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto:wght@400;500&display=swap"
+         rel="stylesheet"
+      />
+   </head>
+   <body>
+      <%- include('../partials/nav.ejs') %>
+
+      <div class="upload-form-container">
+         <div class="form-container">
+            <h1>Upload Profile Picture</h1>
+            <p><!--upload icon--></p>
+
+            <% if (error) { %>
+            <small class="error">
+               <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+               <%=error%>
+            </small>
+            <% } %>
+
+            <form
+               action="/api/v1/users/profile-photo-upload?_method=PUT"
+               method="post"
+               enctype="multipart/form-data"
+            >
+               <label for="image">Select Image</label>
+
+               <input type="file" id="image" name="profile" />
+
+               <button type="submit">
+                  Upload
+                  <i class="fas fa-upload"></i>
+               </button>
+            </form>
+         </div>
+      </div>
+
+      <!-- $footer -->
+      <%- include('../partials/footer.ejs') %>
+   </body>
+</html>

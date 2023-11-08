@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Update</title>
+      <script src="https://kit.fontawesome.com/42a182743f.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="/css/register.css" />
+      <!-- Google font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto:wght@400;500&display=swap"
+         rel="stylesheet"
+      />
+   </head>
+   <body>
+      <%- include('../partials/nav.ejs') %>
+
+      <div class="register-container">
+         <div class="register-form-container">
+            <div class="register-form-title">
+               <h1>Update User <i class="fa-solid fa-user-plus"></i></h1>
+            </div>
+
+            <% if (error) { %>
+            <small class="error">
+               <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+               <%= error %>
+            </small>
+            <% } %>
+
+            <form action="/api/v1/users/update?_method=PUT" method="post">
+               <label for="fullname">FullName </label>
+               <input
+                  type="text"
+                  name="fullName"
+                  id="fullname"
+                  autocomplete="off"
+                  value="<%= user.fullName%>"
+               />
+               <label for="email">Email </label>
+               <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  autocomplete="off"
+                  value="<%= user.email%>"
+               />
+               <button type="submit">Update User</button>
+            </form>
+         </div>
+      </div>
+
+      <!-- $footer -->
+      <%- include('../partials/footer.ejs') %>
+   </body>
+</html>

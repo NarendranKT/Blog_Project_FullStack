@@ -1,0 +1,163 @@
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f1f1f1;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+}
+
+.register-form-container {
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(29, 31, 43, 0.7);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    width: 430px;
+}
+
+.register-form-title{
+    font-size: 13px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.register-form-title i{
+    font-size: 20px;
+}
+
+.error {
+    margin: 5px;
+    color: red;
+    font-weight: bold;
+}
+
+.register-form-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding: 10px; */
+    margin: 10px;
+}
+
+.register-form-container form input {
+    width: 350px;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    font-size: 16px;
+    padding-inline: 10px;
+}
+
+.register-form-container form input:focus {
+    border-bottom: 2px solid black;
+}
+
+ form label {
+    font-weight: bolder;
+    font-size: 17px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.register-form-container button {
+    margin-bottom: 15px;
+    height: 30px;
+    color: white;
+    background-color: tomato;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px rgba(73, 73, 77, 0.5);
+}
+
+.register-form-container button:hover {
+    background-color: rgb(252, 76, 45);
+}
+
+.register-form-container button:active {
+    box-shadow: 1px 1px 5px rgba(73, 73, 77, 0.2);
+    transition: ease-in-out 0.5s;
+}
+
+.register-form-container form p {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.register-form-container form a {
+    text-decoration: none;
+    color: tomato;
+}
+
+.register-form-container form a:hover {
+    text-decoration: underline;
+}
+
+.inputWrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+select {
+    /* styling */
+    background-color: white;
+    border: thin solid black;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+
+    /* reset */
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+#category{
+    background-image:
+            linear-gradient(45deg, transparent 50%, gray 50%),
+            linear-gradient(135deg, gray 50%, transparent 50%),
+            radial-gradient(#ddd 70%, transparent 72%);
+        background-position:
+            calc(100% - 20px) calc(1em + 2px),
+            calc(100% - 15px) calc(1em + 2px),
+            calc(100% - .5em) .5em;
+        background-size:
+            5px 5px,
+            5px 5px,
+            1.5em 1.5em;
+        background-repeat: no-repeat;
+}
+
+select#category :focus {
+    background-image:
+        linear-gradient(45deg, white 50%, transparent 50%),
+        linear-gradient(135deg, transparent 50%, white 50%),
+        radial-gradient(gray 70%, transparent 72%);
+    background-position:
+        calc(100% - 15px) 1em,
+        calc(100% - 20px) 1em,
+        calc(100% - .5em) .5em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1.5em 1.5em;
+    background-repeat: no-repeat;
+    border-color: green;
+    outline: 0;
+}

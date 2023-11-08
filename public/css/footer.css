@@ -1,0 +1,83 @@
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #003049;
+    color: #fff;
+    margin-top: 10px;
+}
+
+footer .about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.logo-text{
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: rgb(255, 34, 34);
+}
+
+footer .contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 1px;
+    font-size: 1.3rem;
+}
+
+footer .contact span{
+    padding : 5px;
+}
+
+footer .contact i{
+    padding : 10px;
+    font-size: 30px;
+}
+
+footer .contact a{
+    text-decoration: none;
+    color: #0077b6;
+}
+
+footer .socials{
+    margin-bottom: 25px;
+}
+
+footer .socials a{
+    margin : 15px;
+    font-size : 30px;
+    color: rgb(255, 34, 34);
+    text-decoration: none;
+    
+}
+
+footer .socials a:hover{
+    transition: ease-in-out 0.3s;
+    font-size: 37px;
+}
+
+/* $Mobile responsive design */
+
+@media(max-width: 675px){
+    .logo-text{
+       font-size: 2rem;
+    }
+
+    footer .about p{
+        font-size: 12px;
+    }
+
+    footer .contact{
+        font-size: 1rem;
+    }
+}

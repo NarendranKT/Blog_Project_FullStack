@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Add Post</title>
+      <link rel="stylesheet" href="/css/register.css" />
+   </head>
+   <body>
+      <%- include('../partials/nav.ejs') %>
+
+      <div class="register-container">
+         <div class="register-form-container">
+            <div class="register-form-title">
+               <h1>Add Posts</h1>
+            </div>
+
+            <% if (error) { %>
+            <small class="error">
+               <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+               <%= error %>
+            </small>
+            <% } %>
+
+            <form action="/api/v1/posts" method="post" enctype="multipart/form-data">
+               <div class="inputWrapper">
+                  <label for="title">Title </label>
+                  <input type="text" name="title" id="title" autocomplete="off" value="" />
+               </div>
+               <div class="inputWrapper">
+                  <label for="category">Category </label>
+                  <select name="category" id="category">
+                     <option value="">select category</option>
+                     <option value="react js">ReactJS</option>
+                     <option value="html">HTML</option>
+                     <option value="css">CSS</option>
+                     <option value="node js">NodeJS</option>
+                     <option value="javascript">JavaScript</option>
+                     <option value="other">Others</option>
+                  </select>
+               </div>
+
+               <div class="inputWrapper">
+                  <label for="description">Description</label>
+                  <textarea
+                     name="description"
+                     id="description"
+                     cols="30"
+                     rows="10"
+                     style="padding: 5px"
+                  ></textarea>
+               </div>
+
+               <div class="inputWrapper">
+                  <label for="image">Post Image</label>
+                  <input type="file" name="post" id="image" style="border: none" />
+                  <!-- err -->
+               </div>
+
+               <button type="submit">Create post</button>
+            </form>
+         </div>
+      </div>
+
+      <!-- $footer -->
+      <%- include('../partials/footer.ejs') %>
+   </body>
+</html>

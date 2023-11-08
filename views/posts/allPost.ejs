@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script src="https://kit.fontawesome.com/42a182743f.js" crossorigin="anonymous"></script>
+      <!-- Google font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto:wght@400;500&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="/css/home.css" />
+      <title>All Posts</title>
+   </head>
+   <body>
+      <%- include('../partials/nav.ejs') %>
+
+      <section class="latest-posts-container">
+         <% if (posts?.length <= 0) { %>
+         <h1>You have no post...</h1>
+         <% } else { %> <% posts?.forEach(element => { %>
+         <article class="post-content">
+            <img src="<%= element?.image %>" alt="post-image" />
+            <p class="post-info">
+               <span class="post-author">
+                  <i class="fas fa-user"></i>
+                  <a href="#"><%= element?.user?.fullName%></a>
+               </span>
+               <span class="post-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  <time datetime="<%= element?.createdAt.toLocaleDateString() %>"
+                     ><%= element?.createdAt.toLocaleDateString() %></time
+                  >
+               </span>
+            </p>
+
+            <h1 class="post-title"><%= element?.title %></h1>
+            <p class="post-body"><%= truncatePost(element?.description) %></p>
+
+            <div class="category">
+               <span>category : <%= element?.category %></span>
+            </div>
+            <a href="/api/v1/posts/<%= element?._id%>" class="post-read-more"
+               >Continue Reading...</a
+            >
+         </article>
+         <% }) %> <%}%>
+      </section>
+
+      <%- include('../partials/footer.ejs') %>
+   </body>
+</html>

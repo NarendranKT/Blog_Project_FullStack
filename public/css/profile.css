@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+    background-color: #f2f2f2;
+}
+
+
+.profile-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-container header{
+    padding: 20px;
+    height: 35vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.profile-img img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    position: relative  ;
+    margin-top: -20px;
+}
+
+.profile-img .fas{
+    position: absolute;
+    margin-top: 60px;
+    margin-left: -25px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #1da1f2;
+    border-radius: 50%;
+    padding : 5px;
+    cursor: pointer;
+}
+
+.profile-container .icons-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 20vh;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.profile-container .icons-container .fas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    color: #fb8500;
+    margin-right: 25px;
+    font-size: 20px;
+}
+
+.profile-container .icons-container .fas:hover{
+    color: #fe9319;
+    font-size: 25px;
+    border: 1px solid gainsboro;
+    padding: 7px;
+    border-radius: 50%;
+    background-color: black;
+    transition: ease-out 0.3s;
+}
+
+.personal-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #fff;
+    width: 40%;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.profile-container .details{
+    display: flex;
+    margin-top: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.details-wrapper{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.details .fas{
+    margin-right: 10px;
+    color: #1da1f2;
+}
